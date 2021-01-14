@@ -192,10 +192,8 @@ sell: page1/list[30]
 - 进来时, 将位置设置为原来保存的位置saveY信息即可.
   - 注意: 最好回来时, 进行一次refresh()
 
-非父子组件通信:
 
-
- ###api端口
+ ### api端口
    api是使用的是 [constown](https://github.com/constown/mallAPI) 提供的接口.下载对应文件，
    安装环境，使用npm运行上面作者的文件（默认命令 npm run start）后台默认端口是 localhost:3000，
    在vue mall项目中，给network的request中添加baseURL为http://localhost:3000
