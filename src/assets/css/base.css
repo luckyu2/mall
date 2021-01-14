@@ -1,0 +1,52 @@
+@import "normalize.css";
+
+/*获取根元素HTML*/
+:root{
+    --color-text:#666;
+    --color-hiht-text:#ff5777;
+    /* tintcolor 表示涂上去的颜色，用于搜索的背景*/
+    --color-tint:#ff8198;
+    --color-background:#fff;
+    --font-size:14px;
+    --line-height:1.5;
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:-apple-system,Helvetica,sans-serif,PingFangSC-Regular,Droid Sans,Arial;
+    user-select: none;
+    -webkit-tap-highlight-color:transparent ;
+    background: var(--color-background);
+    color: var(--color-text);
+    /*rem vw/vh*/
+    width: 100vw;
+}
+a{
+    color:var(--color-text);
+    text-decoration: none;
+}
+.clear-fix::after{
+    clear: both;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.clear-fix{
+    zoom: 1;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
