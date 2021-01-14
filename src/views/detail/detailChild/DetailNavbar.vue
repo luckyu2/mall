@@ -16,7 +16,7 @@
 <script>
   import NavBar from "components/common/navbar/NavBar"
   export default {
-    name: "DetailItem",
+    name: "DetailNavbar",
     components:{
       NavBar
     },
@@ -28,9 +28,11 @@
     },
     methods:{
       itemClick(index){
-        this.currentIndex = index
+        this.currentIndex = index;
+        this.$emit('titleClick',index)
       },
       navBack(){
+        //点击返回到前一页
         this.$router.back()
       }
     }
@@ -40,7 +42,6 @@
 <style scoped>
   .detail-nav{
     display: flex;
-
   }
   .detail-item{
     flex: 1;

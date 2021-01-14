@@ -1,8 +1,10 @@
 <template>
   <div class="goods">
-    <goods-list-item :goodsItem="item"
-                     v-for="(item,index) of goods"
-                     :key=index target="_blank">
+    <goods-list-item v-for="(item,index ) in goods"
+                     :goods-item="item"
+                     :key="item.acm"
+                     >
+<!--      key=index target="_blank"-->
     </goods-list-item>
   </div>
 </template>
@@ -11,12 +13,12 @@
   import GoodsListItem from "./GoodsListItem"
 
   export default {
-    name: "Goodslist",
+    name: "GoodsList",
     props:{
-      goods:{
-        type:Array,
+      goods: {
+        type: Array,
         default(){
-          return[]
+          return []
         }
       }
     },
@@ -24,11 +26,16 @@
       GoodsListItem
     },
 
+
   }
 </script>
 
 <style scoped>
   .goods{
-
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    margin-bottom: 50px;
   }
+
 </style>

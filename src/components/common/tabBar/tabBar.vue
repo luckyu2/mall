@@ -29,9 +29,11 @@
   bottom:0;
   display: flex;
   height: 49px;
+  z-index: 5;
   text-align: center;
   box-shadow: 0 -2px 3px rgba(110,110,110,.3);
   background: rgb(230,230,230);
+  padding-top: 2px;
 }
 
 </style>

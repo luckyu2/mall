@@ -2,11 +2,11 @@
   <div>
     <div class="shop-logo">
       <div class="logo-left">
-         <img src="~@/assets/img/profile/avatar.svg" alt="">
+         <img src="~@/assets/img/profile/avatar1.svg" alt="">
       </div>
       <div class="logo-right">
           <ul>
-            <li>瑞琪小宝贝</li>
+            <li class="vip">瑞琪呀 <img src="~@/assets/img/profile/vip5.svg" alt=""> </li>
             <li><img src="~@/assets/img/profile/phone1.svg" alt="">
               13878451445</li>
           </ul>
@@ -31,9 +31,8 @@
 </template>
 
 <script>
-  import
   export default {
-    name: "ProfileInfoItem"
+    name: "ProfileInfoTop"
   }
 </script>
 
@@ -59,11 +58,15 @@
   }
   .logo-right{
     flex: 4;
-    margin-top: 15px;
+    margin-top: 5px;
   }
   .logo-right li:nth-child(1){
     color: red;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
+  }
+  .shop-logo .logo-right .vip img{
+    height: 35px;
+    width: 60px;
   }
   .shop-logo .logo-right img{
     height: 20px;
@@ -72,7 +75,7 @@
   .info{
     display: flex;
     text-align: center;
-    padding: 20px 0;
+    padding: 35px 0;
     border-bottom: 5px solid #eee;
   }
   .title{
@@ -82,7 +85,5 @@
     color: var(--color-tint);
     line-height: 30px;
   }
-  .info-mulu{
-    padding: 10px 10px;
-  }
+
 </style>

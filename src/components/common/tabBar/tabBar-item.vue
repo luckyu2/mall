@@ -8,10 +8,7 @@
       <slot  name="item-text" ></slot>
     </div>
   </div>
-<!--    <div class="tabBar_item">分类</div>-->
-<!--    <div class="tabBar_item">购物车</div>-->
-<!--    <div class="tabBar_item">我的</div>-->
-<!--  </div>-->
+
 </template>
 
 <script>
