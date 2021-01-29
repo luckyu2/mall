@@ -1,8 +1,8 @@
 <template>
   <div class="goods">
-    <goods-list-item v-for="(item,index ) in goods"
+    <goods-list-item v-for="item in  goods"
                      :goods-item="item"
-                     :key="item.acm"
+                     :key="item.index"
                      >
 <!--      key=index target="_blank"-->
     </goods-list-item>
@@ -25,8 +25,6 @@
     components:{
       GoodsListItem
     },
-
-
   }
 </script>
 
@@ -34,7 +32,7 @@
   .goods{
     display: flex;
     flex-wrap:wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 50px;
   }
 

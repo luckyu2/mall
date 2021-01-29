@@ -15,7 +15,7 @@
       </tr>
       <tr >
         <td> <img src="~@/assets/img/profile/cart.svg" alt=""></td>
-        <td class="better" @click="itemClick" >我的购物车</td>
+        <td class="better"  >我的购物车</td>
       </tr>
       <tr >
         <td> <img src="~@/assets/img/profile/shopping.svg" alt=""></td>

@@ -1,12 +1,11 @@
 <template>
-  <div class="content">
+  <div class="category-content">
       <gird-view v-for="(item,index) in subcategory" :key="index" class="grid-item" >
-          <a :href="item.link">
-            <img :src="item.image" alt="图片" @load="imageLoad" >
-            <p>{{item.title}}</p>
-          </a>
+        <a :href="item.link">
+          <img :src="item.image" alt="商品图片" @load="imageLoad" >
+          <p>{{item.title}}</p>
+        </a>
       </gird-view>
-
   </div>
 </template>
 
@@ -28,8 +27,7 @@
     },
     methods: {
       imageLoad() {
-        //发射图片加载完成信息到home
-        // console.log('category加载完了')
+        //发送图片加载完成信息到父组件
         this.$bus.$emit('categoryImgLoad')
       }
     }
@@ -37,23 +35,20 @@
 </script>
 
 <style scoped>
-.content{
-  height: 100%;
-  margin: 10px 5px;
-  /*display: flex;*/
-  /*flex-wrap: wrap;*/
-  /*justify-content: space-around;*/
-}
-
+  .category-content{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
   .grid-item{
-    margin: 10px 5px;
-    width: 40%;
-    height: 40%;
+    width: 90px;
+    height: 125px;
     text-align: center;
     font-size: 12px;
   }
   .grid-item img  {
-    width: 70%;
-    height: 70%;
+    margin-bottom: 5px;
+    width: 90%;
+    height: 90%;
   }
 </style>

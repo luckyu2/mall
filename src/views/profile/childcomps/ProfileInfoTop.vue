@@ -6,7 +6,7 @@
       </div>
       <div class="logo-right">
           <ul>
-            <li class="vip">瑞琪呀 <img src="~@/assets/img/profile/vip5.svg" alt=""> </li>
+            <li class="vip">luckyu <img src="~@/assets/img/profile/vip5.svg" alt=""> </li>
             <li><img src="~@/assets/img/profile/phone1.svg" alt="">
               13878451445</li>
           </ul>

@@ -1,14 +1,12 @@
+<!--左侧列表部分-->
 <template>
-  <div class="list">
-    <Scroll class="content">
-      <div class="mulu" >
-        <ul v-for="(item,index) in listItem">
-          <li class="item" @click="listClick(index)" :class="{active:currentIndex === index}">{{item.title}}</li>
-        </ul>
-        <div class="bottom"></div>
+    <Scroll >
+      <div class="content-list">
+        <div class="item" @click="listClick(index)"
+             v-for="(item,index) in listItem"
+             :class="{active:currentIndex === index}">{{item.title}}</div>
       </div>
     </Scroll>
-  </div>
 </template>
 
 <script>
@@ -49,38 +47,18 @@
 </script>
 
 <style scoped>
-  .list{
-    /*position: relative;*/
-    height: 100vh;
-  }
-  .content{
-    position: absolute;
-    top: 44px;
-    left: 0;
-    right: 0;
-    bottom: 49px;
-    width: 100px;
-    /*overflow: hidden;*/
-  }
-  .mulu{
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    background-color: #eee;
-  }
-  .bottom{
-    height: 60px;
-  }
-  .item{
-    flex: 1;
-    /*height: 30px;*/
-    text-align: center;
-    line-height: 30px;
-    padding: 5px 0;
-  }
-  .active{
-    color: var(--color-hiht-text);
-    font-size: 15px;
-    background-color: #fff;
-  }
+    .content-list{
+       height: 800px;
+    }
+      .item{
+       height: 45px;
+       line-height: 45px;
+       text-align: center;
+       font-size: 14px;
+      }
+      .active{
+        color: var(--color-hiht-text);
+        font-size: 15px;
+        background-color: #fff;
+      }
 </style>

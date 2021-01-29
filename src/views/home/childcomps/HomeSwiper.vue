@@ -1,5 +1,5 @@
 <template>
-<!--  轮播图页面-->
+<!--  轮播图部分-->
   <div>
     <swiper>
       <swiper-item v-for="item in banners" :key='swiper' target="_blank">

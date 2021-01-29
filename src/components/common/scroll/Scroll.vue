@@ -30,13 +30,12 @@
       }
     },
     mounted() {
-      //一、创建BScroll对象
 
-      // setTimeout(() => {
+      //一、创建引入的BScroll对象
         this.scroll = new BScroll(this.$refs.wrapper, {
           click: true,
           probeType: this.probeType,  //决定是否监听滚动 0，1不监听
-          pullUpLoad: this.pullUpLoad             //决定是否启用下拉加载更多
+          pullUpLoad: this.pullUpLoad   //决定是否启用下拉加载更多
         })
 
         // 二、监听滚动位置 将数据传通过$emit传递给父组件
@@ -45,11 +44,10 @@
 
         })
 
-        //三、下拉加载更多
+        //三、上拉加载更多
         this.scroll.on('pullingUp',()=>{
           this.$emit('pullUpLoad')
         })
-      // }, 500)
 
       // 放在setTimeout外面下面的函数无效
       // this.scroll.on('scroll',(position)=>{
@@ -60,7 +58,7 @@
     },
     methods: {
       scrollTo(x,y,time= 400){
-          this.scroll.scrollTo(x,y,time)
+          this.scroll.scrollTo(x,y,time) //滚动位置及时间
         },
       finishPullUp(){  //重置上拉下拉加载次数
         this.scroll.finishPullUp()

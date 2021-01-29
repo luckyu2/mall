@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
 // () => import(/* webpackChunkName: "about" */ '../views/About.vue')
 const Home = () =>import('views/home/Home')
-const Category = () =>import('views/Category/Category')
+const Category = () =>import('views/category/Category')
 const Profile = () =>import('views/profile/Profile')
 const Cart = () =>import('views/Cart/Cart')
 const Detail =()=>import('views/detail/Detail')

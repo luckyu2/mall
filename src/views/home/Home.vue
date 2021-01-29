@@ -15,8 +15,7 @@
             @scroll="scrollContent"
             :probeType="3"
             @pullUpLoad="loadMore"
-            :pull-up-load="true"
-    >
+            :pull-up-load="true">
       <home-swiper :banners="banners" class="home-swiper"  @swiperImgLoad="swiperImgLoad"></home-swiper>
       <Recommendview :recommends="recommends"></Recommendview>
       <popularview></popularview>
@@ -25,7 +24,7 @@
                    @tabClick="tabClick"
       />
       <goods-list :goods="goods[currentType].list"></goods-list>
-      <!--                 上面因为在@tabClick="tabClick（）"加上了括号导致一直运行失败-->
+      <!--报错： 上面因为在@tabClick="tabClick（）"加上了括号导致一直运行失败-->
 
     </Scroll>
       <back-top @click.native="backClick" v-show="isShowTback" />
@@ -81,21 +80,14 @@
       getHomeGoods,
     },
     created() {
-      //调用methods的方法中封装的函数
+      //页面创建时调用methods封装的的方法
       this.getHomemultidata();
       //商品展示页数据
       this.getHomeGoods('pop')
       this.getHomeGoods('new')
       this.getHomeGoods('sell')
-
     },
     mounted() {
-      //检测goods图加载完成的事件监听
-      // const  refresh = this.debounce(this.$refs.scroll.refresh,90)
-      // this.$bus.$on('imgLoad',function(){
-      // console.log('--------------图片加载完成-----------')
-      // refresh()
-      // })
       // 防抖方法
       const refresh = debounce(this.$refs.scroll.refresh,100);
       this.itemImgListener = ()=> {
@@ -108,14 +100,13 @@
       this.$bus.$off('goodsImgLoad',this.itemImgListener)
     },
     methods:{
-      // -----事件点击的方法---------------------------
-
-        //接收轮播图是否加载的完成后，计算tabContent高度
+        //接收轮播图是否加载完成，计算tabContent高度
       swiperImgLoad(){
         // console.log('------------')
        this.offsetTop = this.$refs.tabControl2.$el.offsetTop
         // console.log(this.offsetTop)
       },
+      // -----事件点击的方法---------------------------
       tabClick(index){
         // console.log(index)
         this.TCindex = index
@@ -133,26 +124,27 @@
         // this.$refs.constructor1.currentType=index  XXXXX错误  cunrrentIndex为tabControl.vue中data的数据
         this.$refs.tabControl2.currentIndex = index;
         this.$refs.tabControl1.currentIndex = index;
-
       },
-      backClick(){               //下拉滚动时，点击右下角按钮，回到指定顶部位置
-        // ref的位置标记错了，导致不能运行，应该放在sroll组件，我放在了backtop里面
+      //下拉滚动时，点击右下角按钮，回到指定顶部位置的方法
+      backClick(){
+        // ref的位置标记错了，导致不能运行，应该放在sroll组件，我放在了backtop里面—_—!
         this.$refs.scroll.scrollTo(0,0)
       },
-      scrollContent(position){   //滚动数据监听
+      //监听页面滚动时获取数据的方法
+      scrollContent(position){
         // console.log(position.y)  获取滚动时y轴的数字
         // this.isShowTback = position.y> -1000  用下面的方法可以将负的值变成正的
         this.isShowTback = (-position.y) > 1000
         //用于tabcontrol的是否显示
         this.isShowTop = this.offsetTop < (-position.y)
       },
-
+      // 上拉加载更多方法
       loadMore(){
         this.getHomeGoods(this.currentType)
         //解决上拉不动的bug
         this.$refs.scroll.refresh()
       },
-      // -------------请求数据的方法------------------
+      // -------------以下为请求数据的方法------------------
       //获取轮播图和推荐的数据
       getHomemultidata(){
         getHomemultidata().then(res=>{
@@ -163,7 +155,6 @@
         })
       },
       //获取商品列表数据的封装方法
-      // http://localhost:3000/home/data?type=new&page=1
       getHomeGoods(type){
         let page = this.goods[type].page + 1
         getHomeGoods(type,page).then(res=>{
@@ -176,9 +167,7 @@
           console.log(err+'无数据')
         })
       },
-
     }
-
   }
 </script>
 
@@ -192,8 +181,8 @@
   .home-nav{
     background: var(--color-tint);
     color: #fff;
+    font-weight: 700;
     /*因为better-scroll会让指定位置的内容滚动，此处不用fixed*/
-
   }
   .home-swiper{
     /*padding-top: 44px;*/
@@ -209,13 +198,11 @@
   }
   .contents{
     overflow: hidden;
-    /*height: 400px;*/
     /*height: calc(100% - 93px);*/
     position: absolute;
     top: 44px;
     left: 0;
     right: 0;
     bottom: 49px;
-    /*width: 100%;*/
   }
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div class="goods-box" @click="goodsItemClick" >
-
       <img :src="showImage"   @load="imageLoad">
       <!--<img v-lazy="showImg" alt="" @load="imageLoad" >-->
     <div class="goods-info">
@@ -37,18 +36,17 @@
     },
     computed: {
       showImage(){
-        return this.goodsItem.image || this.goodsItem.show.img
-      }
+        return this.goodsItem.img || this.goodsItem.image || this.goodsItem.show.img      }
     },
     methods:{
       imageLoad(){
-        //发射图片加载完成信息到home
+        //图片加载完成信息发送到home
         // console.log('goods加载完了')
         this.$bus.$emit('goodsImgLoad')
       },
       goodsItemClick(){
         // console.log('jumping to detail page');
-        this.$router.push('/detail/'+this.goodsItem.iid);
+        this.$router.push('/detail/' + this.goodsItem.iid);
         // this.$router.push('/detail/')
       }
     }
