@@ -50,14 +50,7 @@
 
 见[博客](https://luckyu.xyz/2021/01/13/%E7%A7%BB%E5%8A%A8%E7%AB%AFXX%E8%B4%AD%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%9D%E8%B7%AF/)
 
- ### 接口开发
-
-   - api是使用的是 [constown](https://github.com/constown/mallAPI) 提供的接口.下载对应文件。
-   - 安装环境，使用npm运行上面作者的文件（默认命令 npm run start）后台默认端口是 localhost:3000，
-     在vue mall项目中，给network的request中添加baseURL为http://localhost:3000
-         就ok了。
- - 作者[constown]中app.js里面的路由配置，基本上和coderwhy老师提供的api接口路径是一致的，
-   有兴趣可以在其基础上添加更多的东西，如果觉得麻烦，可以加coderwhy老师wx获取
+ 
 
  ### 致谢：
 
