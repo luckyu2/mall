@@ -30,9 +30,9 @@
 
  ### 接口开发
 
-   - api是使用的是 [constown](https://github.com/constown/mallAPI) 提供的接口.点击下载对应文件。
+   - api是使用的是 [mallAPI](https://github.com/luckyu2/mallAPI) 提供的接口.点击下载对应文件。
 
-   - 安装依赖环境，使用npm运行上面作者的文件（默认命令 npm  start）
+   - 安装依赖环境，默认命令 npm  start）
 
    - 修改src/network/request.js 文件中的数据接口baseURL
 
@@ -44,7 +44,7 @@
          timeout: 5000
        })
      ```
-   - 备注： 作者[constown]中app.js里面的路由配置，基本上和coderwhy老师提供的api接口路径是一致的，
+   - 备注： app.js里面的路由配置，基本上和coderwhy老师提供的api接口路径是一致的，
    有兴趣可以在其基础上添加更多的东西，如果觉得麻烦，可以加coderwhy老师wx获取
 ### 项目开发文档
 
