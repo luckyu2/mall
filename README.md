@@ -30,7 +30,7 @@
 
  ### 接口开发
 
-   - api是使用的是 [mallAPI](https://github.com/luckyu2/mallAPI) 提供的接口.点击下载对应文件。
+   - 前往[mallAPI](https://github.com/luckyu2/mallAPI) .下载对应文件。
 
    - 安装依赖环境，默认命令 npm  start）
 
